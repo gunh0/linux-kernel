@@ -8,3 +8,9 @@ all:
 
 clean:
 	$(MAKE) -C $(KDIR) M=$(PWD) clean
+
+test:
+	sudo dmesg -C
+	sudo insmod lkm_example.ko
+	sudo rmmod lkm_example.ko
+	dmesg

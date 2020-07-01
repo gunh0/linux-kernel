@@ -79,3 +79,43 @@ $ sudo make clean
 # to delete the executable file and all the object files from the directory
 ```
 
+<br/>
+
+To test our module and see the output of the kernel log without having to run separate commands
+
+```bash
+$ make test
+```
+
+<br/>
+
+<br/>
+
+### make_device_file
+
+Since applications are restricted from viewing the contents of kernel space memory, applications must use an API to communicate with them.
+
+While there are technically multiple ways to accomplish this, the most common is to create a device file.
+
+```bash
+$ make test
+# Run “make test”, you’ll see the output of the device’s major number. 
+```
+
+Now when you run “make test”, you’ll see the output of the device’s major number. In our example, this is automatically assigned by the kernel. However, you’ll need this value to create the device.
+
+Take the value you obtain from “make test” and use it to create a device file so that we can communicate with our kernel module from user space.
+
+```bash
+$ sudo mknod /dev/lkm_example c "MAJOR NUMBER" 0
+
+$ cat /dev/lkm_example
+# greb content from the device.
+```
+
+When we’re done with the device, delete it and unload the module.
+
+```bash
+$ sudo rm /dev/lkm_example
+$ sudo rmmod lkm_example
+```
