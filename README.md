@@ -12,6 +12,8 @@ CentOS Linux release 8.1.1911 (Core)
 
 $ cat /proc/version
 Linux version 4.18.0-147.8.1.el8_1.x86_64 (mockbuild@kbuilder.bsys.centos.org) (gcc version 8.3.1 20190507 (Red Hat 8.3.1-4) (GCC)) #1 SMP Thu Apr 9 13:49:54 UTC 2020
+
+$ sudo timedatectl set-timezone Asia/Seoul
 ```
 
 <br/>
@@ -49,6 +51,24 @@ You also have no access to the standard library. While the kernel provides some 
 | usr           | Early user-space code (called initramfs)      |
 | tools         | Tools helpful for developing Linux            |
 | virt          | Virtualization infrastructure                 |
+
+<br/>
+
+<br/>
+
+### Basic command in Linux system
+
+``` bash
+$ lsmod
+# lsmod is a command on Linux systems. It shows which loadable kernel modules are currently loaded.
+$ lsmod | grep ABC
+# To find out whether a specific module is loaded, filter the output with grep.
+
+$ modinfo [-0] [-F field] [-k kernel] [modulename|filename...]
+# modinfo command in Linux system is used to display the information about a Linux Kernel module.
+```
+
+
 
 <br/>
 
@@ -119,3 +139,15 @@ When we’re done with the device, delete it and unload the module.
 $ sudo rm /dev/lkm_example
 $ sudo rmmod lkm_example
 ```
+
+<br/>
+
+<br/>
+
+### crypto-module
+
+<br/>
+
+<br/>
+
+### belt-module
