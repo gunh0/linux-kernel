@@ -77,7 +77,7 @@ $ modinfo [-0] [-F field] [-k kernel] [modulename|filename...]
 ### lkm_example
 
 ```bash
-$ sudo yum install elfutils-libelf-devel
+$ sudo yum install elfutils-libelf-devel kernel-devel
 # The elfutils-libelf-devel package contains the libraries to create applications for handling compiled objects. libelf allows you to access the internals of the ELF object file format, so you can see the different sections of an ELF file.
 
 $ sudo make
@@ -144,10 +144,20 @@ $ sudo rmmod lkm_example
 
 <br/>
 
+### belt-module
+
+- Linux Crypto API Belt module
+  - https://github.com/luc-lynx/belt-module
+
+<br/>
+
+<br/>
+
 ### crypto-module
 
-<br/>
+- Code Example For Symmetric Key Cipher Operation
+  - https://www.kernel.org/doc/html/v4.18/crypto/api-samples.html
 
 <br/>
 
-### belt-module
+<br/>
