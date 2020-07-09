@@ -61,6 +61,7 @@ You also have no access to the standard library. While the kernel provides some 
 ``` bash
 $ lsmod
 # lsmod is a command on Linux systems. It shows which loadable kernel modules are currently loaded.
+
 $ lsmod | grep ABC
 # To find out whether a specific module is loaded, filter the output with grep.
 
@@ -139,6 +140,18 @@ When we’re done with the device, delete it and unload the module.
 $ sudo rm /dev/lkm_example
 $ sudo rmmod lkm_example
 ```
+
+<br/>
+
+<br/>
+
+-----------
+
+<br/>
+
+### test_module
+
+![image](https://user-images.githubusercontent.com/41619898/86996799-8fa85000-c1e7-11ea-9474-629c62e31303.png)
 
 <br/>
 
