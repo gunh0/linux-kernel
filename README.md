@@ -26,6 +26,53 @@ You also have no access to the standard library. While the kernel provides some 
 
 <br/>
 
+### VI environment setting for development
+
+```bash
+vi /root/.vimrc
+```
+
+or
+
+```bash
+# The .vimrc file must always exist in the home directory, so go to the home directory to create the .vimrc.
+
+cd ~
+vim .vimrc
+```
+
+<br/>
+
+`.vimrc`
+
+```
+syntax on
+set hlsearch
+set nu
+set autoindent
+set ts=4
+set sts=4
+set cindent
+set laststatus=2
+set shiftwidth=4
+set showmatch
+set smartcase
+set smarttab
+set smartindent
+set ruler
+set fileencodings=utf8,euc-kr
+set nobackup
+filetype on
+set background=dark
+colorscheme evening
+set history=1000	"VI edit history up to 1,000"
+set hlsearch	"Enable search keyword highlighting"
+```
+
+<br/>
+
+<br/>
+
 ### Directories in the Root of the Kernel Source Tree 
 
 | Directory     | Description                                   |
@@ -69,7 +116,14 @@ $ modinfo [-0] [-F field] [-k kernel] [modulename|filename...]
 # modinfo command in Linux system is used to display the information about a Linux Kernel module.
 ```
 
+<br/>
 
+<br/>
+
+## Done List
+
+- lkm_example
+- make_device_file
 
 <br/>
 
@@ -145,34 +199,3 @@ $ sudo rmmod lkm_example
 
 <br/>
 
------------
-
-<br/>
-
-### test_module
-
-![image](https://user-images.githubusercontent.com/41619898/86996799-8fa85000-c1e7-11ea-9474-629c62e31303.png)
-
-<br/>
-
-<br/>
-
-### belt-module
-
-- Linux Crypto API Belt module
-  - https://github.com/luc-lynx/belt-module
-
-<br/>
-
-<br/>
-
-### crypto-module
-
-- Code Example For Symmetric Key Cipher Operation
-  - https://www.kernel.org/doc/html/v4.18/crypto/api-samples.html
-
-<br/>
-
-<br/>
-
-![image](https://user-images.githubusercontent.com/41619898/87017717-4d910580-c20b-11ea-96bf-dfafdfbe73e0.png)
