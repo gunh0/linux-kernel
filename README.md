@@ -11,7 +11,11 @@ $ cat /etc/redhat-release
 CentOS Linux release 8.1.1911 (Core)
 
 $ cat /proc/version
+# 1st
 Linux version 4.18.0-147.8.1.el8_1.x86_64 (mockbuild@kbuilder.bsys.centos.org) (gcc version 8.3.1 20190507 (Red Hat 8.3.1-4) (GCC)) #1 SMP Thu Apr 9 13:49:54 UTC 2020
+
+# 2nd
+Linux version 3.10.0-1127.13.1.el7.x86_64 (mockbuild@kbuilder.bsys.centos.org) (gcc version 4.8.5 20150623 (Red Hat 4.8.5-39) (GCC) ) #1 SMP Tue Jun 23 15:46:38 UTC 2020
 
 $ sudo timedatectl set-timezone Asia/Seoul
 ```
@@ -43,7 +47,7 @@ vim .vimrc
 
 <br/>
 
-`.vimrc`
+`.vimrc`	 // my custom
 
 ```
 syntax on
@@ -64,7 +68,7 @@ set fileencodings=utf8,euc-kr
 set nobackup
 filetype on
 set background=dark
-colorscheme evening
+colorscheme delek
 set history=1000	"VI edit history up to 1,000"
 set hlsearch	"Enable search keyword highlighting"
 ```
@@ -98,6 +102,17 @@ set hlsearch	"Enable search keyword highlighting"
 | usr           | Early user-space code (called initramfs)      |
 | tools         | Tools helpful for developing Linux            |
 | virt          | Virtualization infrastructure                 |
+
+<br/>
+
+<br/>
+
+##### To be able to perform a successful kernel build, you will need to install the following packages:
+
+- **yum groupinstall "Development Tools"**
+- **yum install ncurses-devel**
+- **yum install qt3-devel** (This is only necessary if you wish to use *make xconfig* instead of *make gconfig* or *make menuconfig*.)
+- **yum install hmaccalc zlib-devel binutils-devel elfutils-libelf-devel**
 
 <br/>
 
@@ -198,4 +213,3 @@ $ sudo rmmod lkm_example
 <br/>
 
 <br/>
-
