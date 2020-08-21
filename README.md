@@ -10,6 +10,10 @@ Linux provides a powerful and expansive API for applications, but sometimes that
 $ cat /etc/redhat-release
 CentOS Linux release 8.1.1911 (Core)
 
+# 4th
+CentOS Linux release 7.7.1908 (Core)
+
+
 $ cat /proc/version
 # 1st
 Linux version 4.18.0-147.8.1.el8_1.x86_64 (mockbuild@kbuilder.bsys.centos.org) (gcc version 8.3.1 20190507 (Red Hat 8.3.1-4) (GCC)) #1 SMP Thu Apr 9 13:49:54 UTC 2020
@@ -19,6 +23,10 @@ Linux version 3.10.0-1127.13.1.el7.x86_64 (mockbuild@kbuilder.bsys.centos.org) (
 
 # 3th
 Linux version 3.10.0-1062.el7.x86_64 (mockbuild@kbuilder.bsys.centos.org) (gcc version 4.8.5 20150623 (Red Hat 4.8.5-36) (GCC) ) #1 SMP Wed Aug 7 18:08:02 UTC 2019
+
+# 4th
+Linux version 3.10.0-1062.el7.x86_64 (mockbuild@kbuilder.bsys.centos.org) (gcc version 4.8.5 20150623 (Red Hat 4.8.5-36) (GCC) ) #1 SMP Wed Aug 7 18:08:02 UTC 2019
+
 
 $ sudo timedatectl set-timezone Asia/Seoul
 ```
@@ -142,6 +150,7 @@ $ modinfo [-0] [-F field] [-k kernel] [modulename|filename...]
 
 - lkm_example
 - make_device_file
+- syscall_hooker
 
 <br/>
 
@@ -216,3 +225,16 @@ $ sudo rmmod lkm_example
 <br/>
 
 <br/>
+
+### syscall_hooker
+
+```bash
+$ sudo make
+$ sudo insmod syscall_hooker.ko
+$ sudo dmesg
+
+$ lsmod | grep "syscall_hooker"
+
+$ sudo rmmod syscall_hooker
+$ sudo make clean
+```
