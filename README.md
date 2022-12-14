@@ -146,7 +146,7 @@ $ modinfo [-0] [-F field] [-k kernel] [modulename|filename...]
 
 <br/>
 
-## Done List
+## Table of Contents
 
 - lkm_example
 - make_device_file
