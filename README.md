@@ -15,17 +15,29 @@ CentOS Linux release 7.7.1908 (Core)
 
 
 $ cat /proc/version
-# 1st
-Linux version 4.18.0-147.8.1.el8_1.x86_64 (mockbuild@kbuilder.bsys.centos.org) (gcc version 8.3.1 20190507 (Red Hat 8.3.1-4) (GCC)) #1 SMP Thu Apr 9 13:49:54 UTC 2020
+### 1st ###
+Linux version 4.18.0-147.8.1.el8_1.x86_64
+(mockbuild@kbuilder.bsys.centos.org)
+(gcc version 8.3.1 20190507 (Red Hat 8.3.1-4) (GCC))
+#1 SMP Thu Apr 9 13:49:54 UTC 2020
 
-# 2nd
-Linux version 3.10.0-1127.13.1.el7.x86_64 (mockbuild@kbuilder.bsys.centos.org) (gcc version 4.8.5 20150623 (Red Hat 4.8.5-39) (GCC) ) #1 SMP Tue Jun 23 15:46:38 UTC 2020
+### 2nd ###
+Linux version 3.10.0-1127.13.1.el7.x86_64
+(mockbuild@kbuilder.bsys.centos.org)
+(gcc version 4.8.5 20150623 (Red Hat 4.8.5-39) (GCC) )
+#1 SMP Tue Jun 23 15:46:38 UTC 2020
 
-# 3th
-Linux version 3.10.0-1062.el7.x86_64 (mockbuild@kbuilder.bsys.centos.org) (gcc version 4.8.5 20150623 (Red Hat 4.8.5-36) (GCC) ) #1 SMP Wed Aug 7 18:08:02 UTC 2019
+### 3th ###
+Linux version 3.10.0-1062.el7.x86_64
+(mockbuild@kbuilder.bsys.centos.org)
+(gcc version 4.8.5 20150623 (Red Hat 4.8.5-36) (GCC) )
+#1 SMP Wed Aug 7 18:08:02 UTC 2019
 
-# 4th
-Linux version 3.10.0-1062.el7.x86_64 (mockbuild@kbuilder.bsys.centos.org) (gcc version 4.8.5 20150623 (Red Hat 4.8.5-36) (GCC) ) #1 SMP Wed Aug 7 18:08:02 UTC 2019
+### 4th ###
+Linux version 3.10.0-1062.el7.x86_64
+(mockbuild@kbuilder.bsys.centos.org)
+(gcc version 4.8.5 20150623 (Red Hat 4.8.5-36) (GCC) )
+#1 SMP Wed Aug 7 18:08:02 UTC 2019
 
 
 $ sudo timedatectl set-timezone Asia/Seoul
@@ -50,7 +62,8 @@ vi /root/.vimrc
 or
 
 ```bash
-# The .vimrc file must always exist in the home directory, so go to the home directory to create the .vimrc.
+# The .vimrc file must always exist in the home directory,
+# so go to the home directory to create the .vimrc.
 
 cd ~
 vim .vimrc
@@ -133,7 +146,8 @@ set hlsearch	"Enable search keyword highlighting"
 
 ``` bash
 $ lsmod
-# lsmod is a command on Linux systems. It shows which loadable kernel modules are currently loaded.
+# lsmod is a command on Linux systems.
+#It shows which loadable kernel modules are currently loaded.
 
 $ lsmod | grep ABC
 # To find out whether a specific module is loaded, filter the output with grep.
@@ -158,28 +172,20 @@ $ modinfo [-0] [-F field] [-k kernel] [modulename|filename...]
 
 ### lkm_example
 
-```bash
-$ sudo yum install elfutils-libelf-devel kernel-devel
-# The elfutils-libelf-devel package contains the libraries to create applications for handling compiled objects. libelf allows you to access the internals of the ELF object file format, so you can see the different sections of an ELF file.
-
-$ sudo make
-# It should compile your module successfully.
-
-$ sudo insmod lkm_example.ko
-# If all goes well, you won’t see a thing. The printk function doesn’t output to the console but rather the kernel log.
-
-$ sudo dmesg
-# You should see the message line prefixed by a timestamp.
-
-$ lsmod | grep "lkm_example"
-# We can also check to see if the module is still loaded.
-
-$ sudo rmmod lkm_example
-# Remove the module
-
-$ sudo make clean
-# to delete the executable file and all the object files from the directory
-```
+- `$ sudo yum install elfutils-libelf-devel kernel-devel`
+  - The elfutils-libelf-devel package contains the libraries to create applications for handling compiled objects. libelf allows you to access the internals of the ELF object file format, so you can see the different sections of an ELF file.
+- `$ sudo make`
+  - It should compile your module successfully.
+- `$ sudo insmod lkm_example.ko`
+  - If all goes well, you won’t see a thing. The printk function doesn’t output to the console but rather the kernel log.
+- `$ sudo dmesg`
+  - You should see the message line prefixed by a timestamp.
+- `$ lsmod | grep "lkm_example"`
+  - We can also check to see if the module is still loaded.
+- `$ sudo rmmod lkm_example`
+  - Remove the module
+- `$ sudo make clean`
+  - to delete the executable file and all the object files from the directory
 
 <br/>
 
